@@ -11,7 +11,7 @@ namespace Core.Dtos
     {
         public int Id { get; set; }
 
-        public ApartmentAddress Address { get; set; }
+        public ApartmentAddressDto Address { get; set; }
 
         public float TotalArea { get; set; }
 
@@ -26,7 +26,17 @@ namespace Core.Dtos
         public ApartmentDto(Apartment apartment)
         {
             Id = apartment.Id;
-            Address = apartment.Address;
+            Address = new()
+            {
+                Id = apartment.Address.Id,
+                City = apartment.Address.City,
+                Street = apartment.Address.Street,
+                Number = apartment.Address.Number,
+                Section = apartment.Address.Section,
+                BuildingNumber = apartment.Address.BuildingNumber,
+                Floor = apartment.Address.Floor,
+                ApartmentNumber = apartment.Address.ApartmentNumber
+            };
             TotalArea = apartment.TotalArea;
             UsableArea = apartment.UsableArea;
             NumberOfRooms = apartment.NumberOfRooms;

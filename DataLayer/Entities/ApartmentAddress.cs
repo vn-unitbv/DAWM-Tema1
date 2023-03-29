@@ -15,24 +15,24 @@ namespace DataLayer.Entities
     /// </summary>
     public class ApartmentAddress
     {
-        public required int Id { get; set; }
+        public int Id { get; set; }
 
-        public required int ApartmentId { get; set; }
+        public int ApartmentId { get; set; }
 
-        public required Apartment Apartment { get; set; }
+        public Apartment Apartment { get; set; }
 
-        public required string City { get; set; }
+        public string City { get; set; }
 
-        public required string Street { get; set; }
+        public string Street { get; set; }
 
-        public required string Number { get; set; }
+        public string Number { get; set; }
 
-        public required string BuildingNumber { get; set; }
+        public string BuildingNumber { get; set; }
 
-        public required string Section { get; set; }
+        public string Section { get; set; }
 
-        public required string Floor { get; set; }
+        public string Floor { get; set; }
 
-        public required string ApartmentNumber { get; set; }
+        public string ApartmentNumber { get; set; }
     }
 }
