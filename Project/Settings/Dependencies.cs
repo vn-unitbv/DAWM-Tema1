@@ -11,7 +11,7 @@ namespace Project.Settings
             applicationBuilder.Services.AddControllers();
             applicationBuilder.Services.AddSwaggerGen();
 
-            applicationBuilder.Services.AddDbContext<AppDbContext>();
+            applicationBuilder.Services.AddSingleton<AppDbContext>();
 
             AddRepositories(applicationBuilder.Services);
             AddServices(applicationBuilder.Services);
@@ -19,7 +19,7 @@ namespace Project.Settings
 
         private static void AddServices(IServiceCollection services)
         {
-            services.AddSingleton<ApartmentService>();
+            services.AddScoped<ApartmentService>();
         }
 
         private static void AddRepositories(IServiceCollection services)
