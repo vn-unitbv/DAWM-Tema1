@@ -1,4 +1,6 @@
-﻿namespace Project.Settings
+﻿using DataLayer;
+
+namespace Project.Settings
 {
     public static class Dependencies
     {
@@ -6,6 +8,8 @@
         {
             applicationBuilder.Services.AddControllers();
             applicationBuilder.Services.AddSwaggerGen();
+
+            applicationBuilder.Services.AddDbContext<AppDbContext>();
 
             AddRepositories(applicationBuilder.Services);
             AddServices(applicationBuilder.Services);
