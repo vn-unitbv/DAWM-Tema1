@@ -26,7 +26,7 @@ namespace Project.Controllers
         }
 
         [HttpGet("/get/{apartmentId}")]
-        public ActionResult<ApartmentDto> GetById(int apartmentId)
+        public ActionResult<ApartmentDto> GetById([FromRoute] int apartmentId)
         {
             ApartmentDto? result = apartmentService.GetById(apartmentId);
 
@@ -48,11 +48,14 @@ namespace Project.Controllers
         }
 
         [HttpDelete("/delete/{apartmentId}")]
-        public ActionResult<bool> DeleteById([FromBody] int apartmentId)
+        public ActionResult<bool> DeleteById([FromRoute] int apartmentId)
         {
             var result = apartmentService.DeleteById(apartmentId);
 
-            return Ok(result);
+            if (!result)
+                return BadRequest("Apartment could not be deleted");
+
+            return result;
         }
 
     }
