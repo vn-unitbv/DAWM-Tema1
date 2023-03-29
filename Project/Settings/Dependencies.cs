@@ -1,4 +1,5 @@
-﻿using DataLayer;
+﻿using Core.Services;
+using DataLayer;
 using DataLayer.Repositories;
 
 namespace Project.Settings
@@ -18,7 +19,7 @@ namespace Project.Settings
 
         private static void AddServices(IServiceCollection services)
         {
-            
+            services.AddSingleton<ApartmentService>();
         }
 
         private static void AddRepositories(IServiceCollection services)

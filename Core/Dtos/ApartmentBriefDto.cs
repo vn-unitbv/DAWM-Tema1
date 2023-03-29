@@ -9,13 +9,13 @@ namespace Core.Dtos
 {
     public class ApartmentBriefDto
     {
-        public required int Id { get; set; }
+        public int Id { get; set; }
 
-        public required string OwnerName { get; set; }
+        public string OwnerName { get; set; }
 
-        public required string City { get; set; }
+        public string City { get; set; }
 
-        public required string Street { get; set; }
+        public string Street { get; set; }
 
         public ApartmentBriefDto(Apartment apartment)
         {

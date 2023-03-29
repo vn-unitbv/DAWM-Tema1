@@ -9,15 +9,15 @@ namespace Core.Dtos
 {
     public class ApartmentDto
     {
-        public required int Id { get; set; }
+        public int Id { get; set; }
 
-        public required ApartmentAddress Address { get; set; }
+        public ApartmentAddress Address { get; set; }
 
-        public required float TotalArea { get; set; }
+        public float TotalArea { get; set; }
 
-        public required float UsableArea { get; set; }
+        public float UsableArea { get; set; }
 
-        public required int NumberOfRooms { get; set; }
+        public int NumberOfRooms { get; set; }
 
         // String for now so as not to complicate this
         // simple homework pointlessly
