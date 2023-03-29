@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using DataLayer.Repositories;
 
 namespace Project.Settings
 {
@@ -22,7 +23,7 @@ namespace Project.Settings
 
         private static void AddRepositories(IServiceCollection services)
         {
-            
+            services.AddScoped<ApartmentsRepository>();
         }
     }
 }
